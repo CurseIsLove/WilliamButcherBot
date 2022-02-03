@@ -125,7 +125,7 @@ async def userbot_kang(_, message: Message):
         await m.delete()
 
 
-@app.on_message(filters.command("kang") & ~filters.edited)
+@app.on_message(filters.command("steal") & ~filters.edited)
 @capture_err
 async def kang(client, message: Message):
     if not message.reply_to_message:
