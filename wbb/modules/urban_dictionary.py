@@ -1,3 +1,18 @@
+from wbb import app # This is bot's client
+from wbb import app2 # userbot client, import it if module is related to userbot
+from pyrogram import filters # pyrogram filters
+...
+
+
+# For /help menu
+__MODULE__ = "UD"
+__HELP__ = "Module help message"
+
+
+@app.on_message(filters.command("start"))
+async def some_function(_, message):
+    await message.reply_text("I'm already up!!")
+
 import html
 import traceback
 import urllib
