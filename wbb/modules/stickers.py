@@ -132,9 +132,9 @@ async def kang(client, message: Message):
         return await message.reply_text("Reply to a sticker/image to kang it.")
     if not message.from_user:
         return await message.reply_text(
-            "You are anon admin, kang stickers in my pm."
+            "You are anon admin, steal stickers in my pm."
         )
-    msg = await message.reply_text("Kanging Sticker..")
+    msg = await message.reply_text("Stealing Sticker..")
 
     # Find the proper emoji
     args = message.text.split()
@@ -184,7 +184,7 @@ async def kang(client, message: Message):
             if os.path.isfile(temp_file_path):
                 os.remove(temp_file_path)
         else:
-            return await msg.edit("Nope, can't kang that.")
+            return await msg.edit("Nope, can't steal that.")
     except ShortnameOccupyFailed:
         await message.reply_text("Change Your Name Or Username")
         return
@@ -210,7 +210,7 @@ async def kang(client, message: Message):
                 stickerset = await create_sticker_set(
                     client,
                     message.from_user.id,
-                    f"{message.from_user.first_name[:32]}'s kang pack",
+                    f"{message.from_user.first_name[:32]}'s pack @IzumiGroupBot",
                     packname,
                     [sticker],
                 )
