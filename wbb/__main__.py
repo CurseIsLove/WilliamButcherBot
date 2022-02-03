@@ -111,7 +111,7 @@ home_keyboard_pm = InlineKeyboardMarkup(
             ),
           
             InlineKeyboardButton(
-                text="Support 👨", url="http://t.me/WBBSupport"
+                text="Support 👨", url="http://t.me/Izumibotsupport"
             ),
           
         ],
@@ -139,17 +139,14 @@ keyboard = InlineKeyboardMarkup(
                 text="Help ❓",
                 url=f"t.me/{BOT_USERNAME}?start=help",
             ),
-            InlineKeyboardButton(
-                text="Repo 🛠",
-                url="https://github.com/thehamkercat/WilliamButcherBot",
-            ),
+            
         ],
         [
             InlineKeyboardButton(
                 text="System Stats 💻",
                 callback_data="stats_callback",
             ),
-            InlineKeyboardButton(text="Support 👨", url="t.me/WBBSupport"),
+            InlineKeyboardButton(text="Support 👨", url="t.me/Izumibotsupport"),
         ],
     ]
 )
