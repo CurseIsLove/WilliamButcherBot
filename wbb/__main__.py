@@ -142,10 +142,6 @@ keyboard = InlineKeyboardMarkup(
             
         ],
         [
-            InlineKeyboardButton(
-                text="System Stats 💻",
-                callback_data="stats_callback",
-            ),
             InlineKeyboardButton(text="Support 👨", url="t.me/Izumibotsupport"),
         ],
     ]
@@ -156,7 +152,7 @@ keyboard = InlineKeyboardMarkup(
 async def start(_, message):
     if message.chat.type != "private":
         return await message.reply(
-            "Pm Me For More Details.", reply_markup=keyboard
+            "Sup! I am working perfectly.", reply_markup=keyboard
         )
     if len(message.text.split()) > 1:
         name = (message.text.split(None, 1)[1]).lower()
@@ -246,7 +242,7 @@ async def help_parser(name, keyboard=None):
         keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
     return (
         """Hello {first_name}, My name is {bot_name}.
-I'm a group management bot with some useful features.
+I'm a group management bot with zamazing features.
 You can choose an option below, by clicking a button.
 Also you can ask anything in Support Group.
 """.format(
@@ -285,7 +281,7 @@ async def help_button(client, query):
     create_match = re.match(r"help_create", query.data)
     top_text = f"""
 Hello {query.from_user.first_name}, My name is {BOT_NAME}.
-I'm a group management bot with some usefule features.
+I'm a group management bot with amazing features.
 You can choose an option below, by clicking a button.
 Also you can ask anything in Support Group.
 
