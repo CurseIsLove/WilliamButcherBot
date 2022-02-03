@@ -110,12 +110,12 @@ home_keyboard_pm = InlineKeyboardMarkup(
                 text="Commands ❓", callback_data="bot_commands"
             ),
           
-        ],
-        [
             InlineKeyboardButton(
                 text="Support 👨", url="http://t.me/WBBSupport"
             ),
+          
         ],
+        
         [
             InlineKeyboardButton(
                 text="Add Me To Your Group 🎉",
