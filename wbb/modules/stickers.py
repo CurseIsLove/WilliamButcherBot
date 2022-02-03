@@ -45,8 +45,8 @@ __HELP__ = """
     To get FileID of a Sticker.
 /get_sticker
     To get sticker as a photo and document.
-/kang
-    To kang a Sticker or an Image."""
+/steal
+    To steal a Sticker or an Image."""
 
 MAX_STICKERS = (
     120  # would be better if we could fetch this limit directly from telegram
@@ -94,7 +94,7 @@ async def sticker_image(_, message: Message):
 
 
 @app2.on_message(
-    filters.command("kang", prefixes=USERBOT_PREFIX) & filters.user(SUDOERS),
+    filters.command("steal", prefixes=USERBOT_PREFIX) & filters.user(SUDOERS),
 )
 async def userbot_kang(_, message: Message):
     reply = message.reply_to_message
@@ -129,7 +129,7 @@ async def userbot_kang(_, message: Message):
 @capture_err
 async def kang(client, message: Message):
     if not message.reply_to_message:
-        return await message.reply_text("Reply to a sticker/image to kang it.")
+        return await message.reply_text("Reply to a sticker/image to steal it.")
     if not message.from_user:
         return await message.reply_text(
             "You are anon admin, steal stickers in my pm."
@@ -235,7 +235,7 @@ async def kang(client, message: Message):
             break
 
         await msg.edit(
-            "Sticker Kanged To [Pack](t.me/addstickers/{})\nEmoji: {}".format(
+            "Sticker Stoled To [Pack](t.me/addstickers/{})\nEmoji: {}".format(
                 packname, sticker_emoji
             )
         )
